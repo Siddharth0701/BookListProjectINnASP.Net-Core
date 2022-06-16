@@ -11,7 +11,7 @@ namespace BookList.Model
         [Key]
         public int Id { get; set; }
 
-        [Required]
+        [Required ]
         public string Name { get; set; }
 
         public string Author { get; set; }
