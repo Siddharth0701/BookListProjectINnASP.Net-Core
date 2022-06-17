@@ -5,15 +5,17 @@
     }
 
     <h1>Index</h1>*@
+
 <br />
-<div class="container row p-0 m-0 ">
+<div class="container row p-0 m-0">
     <div class="col-9">
         <h2 class="text-info">Book List</h2>
     </div>
     <div class="col-3">
         <a asp-page="Create" class="btn btn-info form-control text-white">Create New Book</a>
-
     </div>
+
+
     <div class="col-12 border p-3 mt-3">
         <form method="post">
             @if (Model.Books.Count() > 0)
@@ -21,13 +23,12 @@
                 <table class="table table-striped border">
                     <tr class="table-secondary">
                         <th>
-                            <lable asp-for="Books.FirstOrDefault().Name"></lable>
+                            <label asp-for="Books.FirstOrDefault().Name"></label>
                         </th>
                         <th>
                             @*@Html.DisplayNameFor(m=>m.Books.FirstOrDefault().Author)*@
-                            <lable asp-for="Books.FirstOrDefault().Author"></lable>
+                            <label asp-for="Books.FirstOrDefault().Author"></label>
                         </th>
-
                         <th>
                             <label asp-for="Books.FirstOrDefault().ISBN"></label>
                         </th>
@@ -48,17 +49,16 @@
                                 @Html.DisplayFor(m => item.ISBN)
                             </td>
                             <td>
-                                <button asp-page-handler="Delete" asp-route-id="@item.Id" onclick="return confirm('Are you sure you want autofocus delete?')" class="btn btn-danger btn-sm"> Delete</button>
+                                <button asp-page-handler="Delete" asp-route-id="@item.Id" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm">Delete</button>
                                 <a asp-page="Edit" asp-route-id="@item.Id" class="btn btn-success btn-sm text-white">Edit</a>
                             </td>
                         </tr>
                     }
                 </table>
-
             }
             else
             {
-                <p>No Books available</p>
+                <p>No books available.</p>
             }
         </form>
     </div>
@@ -83,7 +83,7 @@
         </table>
     </div>
 </div>
-@section Scripts{ 
-<script src="~/js/BookListss.js" ></script>
-
+@section Scripts{
+    <script src="~/js/BookListss.js"></script>
 }
+
